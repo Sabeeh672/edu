@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Online Learning Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showPage('home')">
+                <i class="fas fa-graduation-cap"></i> LearnHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('dashboard')">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-link" type="button" onclick="showPage('courses')">Courses</button>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('about')">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Learn Without Limits</h1>
+                        <p class="lead mb-4">Start, switch, or advance your career with thousands of courses, certificates, and degrees from world-class universities and companies.</p>
+                        <button class="btn btn-primary btn-lg me-3" onclick="showPage('courses')">Explore Courses</button>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Join For Free</button>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+<img src="assets/e learning.png"
+     class="img-fluid rounded"
+     alt="Online Learning">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">Why Choose LearnHub?</h2>
+                <p class="section-subtitle text-center">Discover the benefits of learning with us</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <i class="fas fa-book-reader feature-icon"></i>
+                            <h4>Expert Instructors</h4>
+                            <p>Learn from industry experts with years of practical experience in their fields.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <i class="fas fa-certificate feature-icon"></i>
+                            <h4>Certified Courses</h4>
+                            <p>Get recognized certificates upon course completion to boost your career.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-box">
+                            <i class="fas fa-clock feature-icon"></i>
+                            <h4>Flexible Learning</h4>
+                            <p>Study at your own pace with lifetime access to course materials.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Featured Courses</h2>
+                <p class="section-subtitle text-center">Explore our most popular courses</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card course-card">
+                            <div class="position-relative">
+                                <img src="assets/web.jpg" class="card-img-top course-img" alt="Course">
+                                <span class="badge-category">Development</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Complete Web Development Bootcamp</h5>
+                                <p class="card-text">Master HTML, CSS, JavaScript, React, Node.js and more!</p>
+                                <button class="btn btn-primary w-100" onclick="showCourseDetail(1)">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card course-card">
+                            <div class="position-relative">
+                                <img src="assets/ds.jpeg" class="card-img-top course-img" alt="Course">
+                                <span class="badge-category">Data Science</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Data Science & Machine Learning</h5>
+                                <p class="card-text">Learn Python, data analysis, and machine learning algorithms.</p>
+                                
+                                <button class="btn btn-primary w-100" onclick="showCourseDetail(2)">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card course-card">
+                            <div class="position-relative">
+                                <img src="assets/dm.jpg" class="card-img-top course-img" alt="Course">
+                                <span class="badge-category">Marketing</span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Digital Marketing Masterclass</h5>
+                                <p class="card-text">Master SEO, social media, email marketing, and more.</p>
+                                
+                                <button class="btn btn-primary w-100" onclick="showCourseDetail(3)">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <button class="btn btn-primary btn-lg" onclick="showPage('courses')">Browse All Courses</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 stat-box">
+                        <span class="stat-number">10K+</span>
+                        <p>Active Students</p>
+                    </div>
+                    <div class="col-md-3 stat-box">
+                        <span class="stat-number">500+</span>
+                        <p>Quality Courses</p>
+                    </div>
+                    <div class="col-md-3 stat-box">
+                        <span class="stat-number">100+</span>
+                        <p>Expert Instructors</p>
+                    </div>
+                    <div class="col-md-3 stat-box">
+                        <span class="stat-number">95%</span>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center">What Our Students Say</h2>
+                <p class="section-subtitle text-center">Real reviews from real learners</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="assets/test.png" class="testimonial-img mx-auto d-block" alt="Student">
+                            <p class="text-center">"The courses are well-structured and easy to follow. I learned so much in just a few weeks!"</p>
+                            <h6 class="text-center fw-bold">Zara</h6>
+                            <p class="text-center text-muted small">Web Developer</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="assets/test.png" class="testimonial-img mx-auto d-block" alt="Student">
+                            <p class="text-center">"Great platform with amazing instructors. The certificate helped me land my dream job!"</p>
+                            <h6 class="text-center fw-bold">Ali</h6>
+                            <p class="text-center text-muted small">Data Analyst</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <img src="assets/test.png" class="testimonial-img mx-auto d-block" alt="Student">
+                            <p class="text-center">"Flexible learning schedule and lifetime access make it perfect for working professionals."</p>
+                            <h6 class="text-center fw-bold">Noor</h6>
+                            <p class="text-center text-muted small">Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Courses Page -->
+    <div id="courses" class="page">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Browse All Courses</h2>
+            <p class="section-subtitle text-center">Find the perfect course for you</p>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search courses..." id="searchInput" onkeyup="filterCourses()">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="course-filter">
+                <div class="btn-group" role="group">
+    <button type="button" class="btn btn-outline-success active" onclick="filterByCategory('all')">All Courses</button>
+    <button type="button" class="btn btn-outline-success" onclick="filterByCategory('development')">Development</button>
+    <button type="button" class="btn btn-outline-success" onclick="filterByCategory('data-science')">Data Science</button>
+    <button type="button" class="btn btn-outline-success" onclick="filterByCategory('marketing')">Marketing</button>
+    <button type="button" class="btn btn-outline-success" onclick="filterByCategory('design')">Design</button>
+</div>
+            </div>
+
+            <!-- Course Grid -->
+            <div class="row g-4" id="courseGrid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+   <!-- Course Detail Page -->
+<div id="courseDetail" class="page">
+    <div class="container py-5">
+        <button class="btn btn-outline-success mb-4" onclick="showPage('courses')">
+            <i class="fas fa-arrow-left"></i> Back to Courses
+        </button>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 id="detailTitle">Course Title</h2>
+                        <img id="detailImage" src="" class="img-fluid rounded mb-4" alt="Course">
+                        
+                        <h4>About This Course</h4>
+                        <p id="detailDescription">Course description will appear here.</p>
+                        
+                        <h4 class="mt-4">What You'll Learn</h4>
+                        <ul id="detailLearningPoints">
+                            <!-- Learning points will be dynamically added -->
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">Course Information</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><i class="fas fa-clock text-primary me-2"></i> <span id="detailDuration">Duration: 40 hours</span></li>
+                            <li class="mb-3"><i class="fas fa-signal text-primary me-2"></i> <span id="detailLevel">Level: Beginner</span></li>
+                            <li class="mb-3"><i class="fas fa-video text-primary me-2"></i> <span id="detailLectures">200+ Lectures</span></li>
+                            <li class="mb-3"><i class="fas fa-file-alt text-primary me-2"></i> <span id="detailResources">50+ Resources</span></li>
+                            <li class="mb-3"><i class="fas fa-infinity text-primary me-2"></i> Lifetime Access</li>
+                            <li class="mb-3"><i class="fas fa-certificate text-primary me-2"></i> Certificate</li>
+                        </ul>
+                        <h3 class="text-center mb-4"><span id="detailPrice" class="price">$49.99</span></h3>
+                        <button class="btn btn-primary w-100 mb-2" onclick="enrollCourse()">Enroll Now</button>
+                        <button class="btn btn-outline-success w-100">Add to Wishlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- Dashboard Page -->
+<div id="dashboard" class="page">
+    <div class="container py-5">
+        <!-- Added consistent header section like other pages -->
+        <h2 class="section-title text-center">My Dashboard</h2>
+        <p class="section-subtitle text-center">Track your learning progress</p>
+        
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="dashboard-sidebar">
+                    <div class="text-center mb-4">
+                        <img src="assets/profile.jpg" class="rounded-circle mb-3" width="100" alt="Profile">
+                        <h5>Sara</h5>
+                        <p class="text-muted small">sarahere@gmail.com</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-tachometer-alt me-2"></i> Overview</li>
+                        <li class="list-group-item"><i class="fas fa-book me-2"></i> My Courses</li>
+                        <li class="list-group-item"><i class="fas fa-certificate me-2"></i> Certificates</li>
+                        <li class="list-group-item"><i class="fas fa-user me-2"></i> Profile Settings</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-9">
+                <div class="row mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="dashboard-card text-center">
+                            <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                            <h3>3</h3>
+                            <p class="text-muted">Enrolled Courses</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="dashboard-card text-center">
+                            <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                            <h3>1</h3>
+                            <p class="text-muted">Completed Courses</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="dashboard-card text-center">
+                            <i class="fas fa-certificate fa-3x text-warning mb-3"></i>
+                            <h3>1</h3>
+                            <p class="text-muted">Certificates Earned</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h4 class="mb-4">My Enrolled Courses</h4>
+                    
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="assets/web.jpg" class="img-fluid rounded" alt="Course">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Complete Web Development Bootcamp</h5>
+                                    <p class="text-muted mb-2">By John Smith</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <button class="btn btn-primary">Continue Learning</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="assets/ds.jpeg" class="img-fluid rounded" alt="Course">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Data Science & Machine Learning</h5>
+                                    <p class="text-muted mb-2">By Sarah Johnson</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <button class="btn btn-primary">Continue Learning</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="assets/dm.jpg" class="img-fluid rounded" alt="Course">
+                                </div>
+                                <div class="col-md-7">
+                                    <h5>Digital Marketing Masterclass</h5>
+                                    <p class="text-muted mb-2">By Mike Brown</p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <button class="btn btn-success">View Certificate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="container py-5">
+            <h2 class="section-title text-center">About LearnHub</h2>
+            <p class="section-subtitle text-center">Empowering learners worldwide</p>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <img src="assets/development.png" class="img-fluid rounded" alt="About">
+                </div>
+                <div class="col-md-6">
+                    <h3>Our Mission</h3>
+                    <p>At LearnHub, we believe that education is the key to unlocking human potential. Our mission is to provide accessible, high-quality online education to learners around the world, regardless of their location or background.</p>
+                    <p>We partner with industry experts and leading professionals to create courses that are both practical and engaging, helping you achieve your career goals.</p>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-globe feature-icon"></i>
+                        <h4>Global Reach</h4>
+                        <p>Students from over 150 countries trust LearnHub for their learning journey.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-award feature-icon"></i>
+                        <h4>Quality Content</h4>
+                        <p>All our courses are carefully curated and regularly updated by industry experts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-box">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h4>Community</h4>
+                        <p>Join a vibrant community of learners and collaborate on projects together.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="container py-5">
+            <h2 class="section-title text-center">Contact Us</h2>
+            <p class="section-subtitle text-center">We'd love to hear from you</p>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="mb-4">Get In Touch</h4>
+                            <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="mb-4">Contact Information</h4>
+                            <div class="mb-4">
+                                <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                                <strong>Address:</strong><br>
+                                <span class="ms-4">123 Learning Street, Education City, EC 12345</span>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-phone text-primary me-3"></i>
+                                <strong>Phone:</strong><br>
+                                <span class="ms-4">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-envelope text-primary me-3"></i>
+                                <strong>Email:</strong><br>
+                                <span class="ms-4">info@learnhub.com</span>
+                            </div>
+                            <div class="mb-4">
+                                <i class="fas fa-clock text-primary me-3"></i>
+                                <strong>Working Hours:</strong><br>
+                                <span class="ms-4">Mon - Fri: 9:00 AM - 6:00 PM</span>
+                            </div>
+                            <h5 class="mt-4">Follow Us</h5>
+                            <a href="#" class="btn btn-outline-success rounded rounded-circle btn-sm me-2"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="btn btn-outline-success rounded rounded-circle btn-sm me-2"><i class="fab fa-twitter"></i></a>
+<a href="#" class="btn btn-outline-success rounded rounded-circle btn-sm me-2"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" class="btn btn-outline-success rounded rounded-circle btn-sm me-2"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5 class="mb-3"><i class="fas fa-graduation-cap"></i> LearnHub</h5>
+                    <p>Your trusted partner in online education. Learn anytime, anywhere, and achieve your goals with our expert-led courses.</p>
+                    <div class="mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="mb-3">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                        <li class="mb-2"><a href="#">Press</a></li>
+                        <li class="mb-2"><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" onclick="showPage('courses')">Courses</a></li>
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">Community</a></li>
+                        <li class="mb-2"><a href="#">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5 class="mb-3">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+                        <li class="mb-2"><a href="#">FAQs</a></li>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1)">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 LearnHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
